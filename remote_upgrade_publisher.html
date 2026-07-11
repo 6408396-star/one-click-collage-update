@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <title>统信一键拼图远程升级发布器</title>
+  <title>一键拼图跨平台远程升级发布器</title>
   <style>
     body { font-family: "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; margin: 32px; color: #24362c; background: #f5efe4; }
     main { max-width: 900px; margin: 0 auto; background: #fffaf0; border: 1px solid #e4d7c4; padding: 28px; }
@@ -16,20 +16,34 @@
 </head>
 <body>
 <main>
-  <h1>统信一键拼图远程升级发布器</h1>
-  <p class="note">填写版本和下载地址后，点击生成。把生成的 <code>update.json</code> 上传/替换到软件的远程升级地址即可。</p>
+  <h1>一键拼图跨平台远程升级发布器</h1>
+  <p class="note">分别填写统信和 Windows 版本信息。生成后把 <code>update.json</code> 上传到 GitHub 仓库根目录。</p>
 
-  <label>最新版本</label>
-  <input id="latest" value="1.0.2">
+  <h2>统信 UOS</h2>
+  <label>统信最新版本</label>
+  <input id="latest" value="1.0.4">
 
-  <label>最低可用版本（旧版本低于它就不能使用）</label>
-  <input id="minimum" value="1.0.2">
+  <label>统信最低可用版本</label>
+  <input id="minimum" value="1.0.4">
 
-  <label>新版 .deb 下载地址</label>
-  <input id="download" value="https://example.com/uos-one-click-collage/统信一键拼图_双击安装版_1.0.2_all.deb">
+  <label>统信新版 .deb 下载地址</label>
+  <input id="download" value="https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/uos-one-click-collage_1.0.4_all.deb">
 
-  <label>提示文字</label>
+  <label>统信提示文字</label>
   <textarea id="message" rows="3">软件已发布新版本，请先升级后再继续使用。</textarea>
+
+  <h2>Windows</h2>
+  <label>Windows 最新版本</label>
+  <input id="windowsLatest" value="1.0.4">
+
+  <label>Windows 最低可用版本</label>
+  <input id="windowsMinimum" value="1.0.4">
+
+  <label>Windows 新版 .exe 下载地址</label>
+  <input id="windowsDownload" value="https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/one-click-collage_1.0.4_windows.exe">
+
+  <label>Windows 提示文字</label>
+  <textarea id="windowsMessage" rows="3">Windows 版 1.0.4 新增拼图预览功能，请先升级后再继续使用。</textarea>
 
   <button onclick="generate()">生成 update.json</button>
   <button onclick="downloadJson()">下载 update.json</button>
@@ -47,7 +61,12 @@ function currentConfig() {
     force_update: true,
     prompt_optional_update: true,
     download_url: document.getElementById("download").value.trim(),
-    message: document.getElementById("message").value.trim()
+    message: document.getElementById("message").value.trim(),
+    windows_latest_version: document.getElementById("windowsLatest").value.trim(),
+    windows_min_supported_version: document.getElementById("windowsMinimum").value.trim(),
+    windows_force_update: true,
+    windows_download_url: document.getElementById("windowsDownload").value.trim(),
+    windows_message: document.getElementById("windowsMessage").value.trim()
   };
 }
 
