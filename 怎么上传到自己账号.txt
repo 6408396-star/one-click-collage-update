@@ -1,0 +1,19 @@
+推荐用 GitHub 或 Gitee 网页上传，不需要在这台 Windows 上安装 git。
+
+GitHub：
+1. 打开 https://github.com 并登录自己的账号。
+2. 点击右上角 + 号，选择 New repository。
+3. Repository name 填：one-click-collage-update
+4. 选择 Public。
+5. 创建后点击 uploading an existing file。
+6. 把本文件夹里的 update.json、README.md、remote_upgrade_publisher.html、update_url_GitHub.txt、update_url_Gitee.txt 和 releases 文件夹拖进去。
+7. 点击 Commit changes。
+8. 打开 update.json，点击 Raw，复制地址。
+
+Gitee：
+1. 打开 https://gitee.com 并登录自己的账号。
+2. 新建公开仓库：one-click-collage-update
+3. 上传本文件夹所有内容。
+4. 打开 update.json，点击原始数据/Raw，复制地址。
+
+复制到的 update.json 地址，就是软件的远程升级规则地址。
