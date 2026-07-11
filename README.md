@@ -1,71 +1,44 @@
 # 统信一键拼图远程升级仓库
 
-这个仓库用于公开存放“统信一键拼图”的远程升级规则。
+这个仓库用于公开存放“统信一键拼图”的安装包和远程升级规则。
+
+## 当前版本
+
+- 最新版本：`1.0.4`
+- 最低可用版本：`1.0.4`
+- 强制升级：已开启
+- 本次新增：在导出前预览照片和模板的实际排版，可从预览窗口直接生成高清拼图。
 
 ## 文件说明
 
 - `update.json`：软件启动时读取的远程升级规则。
-- `releases/uos-one-click-collage_1.0.3_all.deb`：当前 1.0.3 安装包，使用英文文件名，方便生成原始下载链接。
-- `remote_upgrade_publisher.html`：以后发布强制升级规则时使用的网页工具。
-- `update_url_GitHub.txt` / `update_url_Gitee.txt`：软件里要填写的升级规则地址模板。
+- `releases/uos-one-click-collage_1.0.4_all.deb`：统信 UOS 双击安装包。
+- `remote_upgrade_publisher.html`：生成升级规则的网页工具。
+- `update_url_GitHub.txt`：软件内置的 GitHub 升级规则地址。
 
-## GitHub 使用方法
+## 本次升级演示
 
-1. 登录你的 GitHub 账号。
-2. 新建公开仓库：`one-click-collage-update`。
-3. 把本目录里的所有文件上传到仓库根目录。
-4. 打开 `update.json`，点击 `Raw`，复制浏览器地址。
-5. 这个地址通常是：
+发布顺序如下：
+
+1. 先上传 `1.0.4` 安装包并确认可下载。
+2. 再把 `update.json` 的 `latest_version` 和 `min_supported_version` 改成 `1.0.4`。
+3. 保持 `force_update` 为 `true`。
+4. 旧版 `1.0.3` 启动时会提示必须升级，并打开 `1.0.4` 下载地址。
+5. 安装 `1.0.4` 后，软件可正常打开并使用“预览拼图”。
+
+## 以后发布新版本
+
+例如发布 `1.0.5`：
+
+1. 上传新安装包到 `releases/uos-one-click-collage_1.0.5_all.deb`。
+2. 把 `update.json` 中的两个版本号改成 `1.0.5`。
+3. 把 `download_url` 改成新安装包地址。
+4. 最后保存 `update.json`，强制升级即生效。
+
+升级规则地址：
 
 ```text
 https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/update.json
 ```
 
-6. 把这个地址写入统信电脑上的：
-
-```text
-/opt/uos-one-click-collage/update_url.txt
-```
-
-## Gitee 使用方法
-
-1. 登录你的 Gitee 账号。
-2. 新建公开仓库：`one-click-collage-update`。
-3. 把本目录里的所有文件上传到仓库根目录。
-4. 打开 `update.json`，点击“原始数据/Raw”，复制浏览器地址。
-5. 这个地址通常是：
-
-```text
-https://gitee.com/你的Gitee用户名/one-click-collage-update/raw/main/update.json
-```
-
-6. 把这个地址写入统信电脑上的：
-
-```text
-/opt/uos-one-click-collage/update_url.txt
-```
-
-## 以后强制升级
-
-假设以后发布 1.0.3，并要求 1.0.3 不能继续使用：
-
-1. 上传新的安装包到 `releases/uos-one-click-collage_1.0.3_all.deb`。
-2. 修改 `update.json`：
-
-```json
-{
-  "enabled": true,
-  "latest_version": "1.0.3",
-  "min_supported_version": "1.0.3",
-  "force_update": true,
-  "prompt_optional_update": true,
-  "download_url": "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/uos-one-click-collage_1.0.3_all.deb",
-  "message": "软件已发布新版本，请先升级后再继续使用。"
-}
-```
-
-3. 保存后，低于 `min_supported_version` 的软件会提示必须升级并退出。
-
-## 重要说明
-
-已经发出去、但没有远程升级检查代码的旧版本，无法被远程强制失效。需要先安装 1.0.3 或更新版本，后续才可以通过这里的 `update.json` 控制升级。
+已经发出去但不含远程检查代码的早期版本无法被远程控制；`1.0.3` 及后续版本可以读取本仓库规则。
