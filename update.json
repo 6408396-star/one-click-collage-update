@@ -1,9 +1,9 @@
 {
-    "enabled":  true,
-    "latest_version":  "1.0.3",
-    "min_supported_version":  "1.0.3",
-    "force_update":  true,
-    "prompt_optional_update":  true,
-    "download_url":  "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/uos-one-click-collage_1.0.3_all.deb",
-    "message":  "软件已发布新版本，请先升级后再继续使用。"
+  "enabled": true,
+  "latest_version": "1.0.4",
+  "min_supported_version": "1.0.4",
+  "force_update": true,
+  "prompt_optional_update": true,
+  "download_url": "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/uos-one-click-collage_1.0.4_all.deb",
+  "message": "1.0.4 新增拼图预览功能，请先升级后再继续使用。"
 }
