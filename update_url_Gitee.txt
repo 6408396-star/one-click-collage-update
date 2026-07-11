@@ -1,0 +1,3 @@
+把 YOUR_GITEE_USERNAME 换成你的 Gitee 用户名：
+
+https://gitee.com/YOUR_GITEE_USERNAME/one-click-collage-update/raw/main/update.json
