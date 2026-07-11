@@ -5,5 +5,10 @@
   "force_update": true,
   "prompt_optional_update": true,
   "download_url": "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/uos-one-click-collage_1.0.4_all.deb",
-  "message": "1.0.4 新增拼图预览功能，请先升级后再继续使用。"
+  "message": "1.0.4 新增拼图预览功能，请先升级后再继续使用。",
+  "windows_latest_version": "1.0.4",
+  "windows_min_supported_version": "1.0.4",
+  "windows_force_update": true,
+  "windows_download_url": "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/one-click-collage_1.0.4_windows.exe",
+  "windows_message": "Windows 版 1.0.4 新增拼图预览功能，请先升级后再继续使用。"
 }
