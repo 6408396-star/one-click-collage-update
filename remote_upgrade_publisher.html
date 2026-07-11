@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>统信一键拼图远程升级发布器</title>
+  <style>
+    body { font-family: "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; margin: 32px; color: #24362c; background: #f5efe4; }
+    main { max-width: 900px; margin: 0 auto; background: #fffaf0; border: 1px solid #e4d7c4; padding: 28px; }
+    h1 { margin-top: 0; }
+    label { display: block; font-weight: 700; margin-top: 18px; }
+    input, textarea { box-sizing: border-box; width: 100%; padding: 10px; margin-top: 6px; border: 1px solid #cdbb9e; font-size: 15px; }
+    button { margin-top: 18px; padding: 11px 18px; border: 0; background: #2f7958; color: white; font-size: 16px; cursor: pointer; }
+    pre { white-space: pre-wrap; background: #25372d; color: #e9f3e8; padding: 16px; }
+    .note { color: #79551f; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>统信一键拼图远程升级发布器</h1>
+  <p class="note">填写版本和下载地址后，点击生成。把生成的 <code>update.json</code> 上传/替换到软件的远程升级地址即可。</p>
+
+  <label>最新版本</label>
+  <input id="latest" value="1.0.2">
+
+  <label>最低可用版本（旧版本低于它就不能使用）</label>
+  <input id="minimum" value="1.0.2">
+
+  <label>新版 .deb 下载地址</label>
+  <input id="download" value="https://example.com/uos-one-click-collage/统信一键拼图_双击安装版_1.0.2_all.deb">
+
+  <label>提示文字</label>
+  <textarea id="message" rows="3">软件已发布新版本，请先升级后再继续使用。</textarea>
+
+  <button onclick="generate()">生成 update.json</button>
+  <button onclick="downloadJson()">下载 update.json</button>
+
+  <h2>生成结果</h2>
+  <pre id="result"></pre>
+</main>
+
+<script>
+function currentConfig() {
+  return {
+    enabled: true,
+    latest_version: document.getElementById("latest").value.trim(),
+    min_supported_version: document.getElementById("minimum").value.trim(),
+    force_update: true,
+    prompt_optional_update: true,
+    download_url: document.getElementById("download").value.trim(),
+    message: document.getElementById("message").value.trim()
+  };
+}
+
+function generate() {
+  document.getElementById("result").textContent = JSON.stringify(currentConfig(), null, 2);
+}
+
+function downloadJson() {
+  generate();
+  const blob = new Blob([document.getElementById("result").textContent], {type: "application/json;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "update.json";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+generate();
+</script>
+</body>
+</html>
