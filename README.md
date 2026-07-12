@@ -4,24 +4,24 @@
 
 ## 当前版本
 
-- 统信 UOS：`1.0.5`
-- Windows：`1.0.5`
-- 最低可用版本：`1.0.5`
+- 统信 UOS：`1.0.6`
+- Windows：`1.0.6`
+- 最低可用版本：`1.0.6`
 - 强制升级：已开启
-- 本次更新：底部按钮功能分色，蓝色用于预览、金橙色用于生成、浅色用于目录工具。
+- 本次更新：使用新的蓝色机器人程序图标，双系统窗口和启动器保持一致。
 
 ## 当前文件
 
 - `update.json`：双平台升级规则。
-- `releases/uos-one-click-collage_1.0.5_all.deb`：统信 UOS 安装包。
-- `releases/one-click-collage_1.0.5_windows.exe`：Windows 程序。
+- `releases/uos-one-click-collage_1.0.6_all.deb`：统信 UOS 安装包。
+- `releases/one-click-collage_1.0.6_windows.exe`：Windows 程序。
 - `remote_upgrade_publisher.html`：生成双平台升级规则的网页工具。
 
 ## 升级行为
 
-1. 统信 `1.0.4` 启动后会提示升级并打开 `.deb` 下载地址。
-2. Windows `1.0.4` 启动后会提示升级并打开 `.exe` 下载地址。
-3. 安装或替换为 `1.0.5` 后即可正常使用新配色界面。
+1. 统信 `1.0.5` 启动后会提示升级并打开 `.deb` 下载地址。
+2. Windows `1.0.5` 启动后会提示升级并打开 `.exe` 下载地址。
+3. 安装或替换为 `1.0.6` 后即可使用新图标版本。
 
 升级规则地址：
 
