@@ -1,14 +1,14 @@
 {
   "enabled": true,
-  "latest_version": "1.0.5",
-  "min_supported_version": "1.0.5",
+  "latest_version": "1.0.6",
+  "min_supported_version": "1.0.6",
   "force_update": true,
   "prompt_optional_update": true,
-  "download_url": "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/uos-one-click-collage_1.0.5_all.deb",
-  "message": "1.0.5 已更新按钮配色，请先升级后再继续使用。",
-  "windows_latest_version": "1.0.5",
-  "windows_min_supported_version": "1.0.5",
+  "download_url": "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/uos-one-click-collage_1.0.6_all.deb",
+  "message": "1.0.6 已更新程序图标，请先升级后再继续使用。",
+  "windows_latest_version": "1.0.6",
+  "windows_min_supported_version": "1.0.6",
   "windows_force_update": true,
-  "windows_download_url": "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/one-click-collage_1.0.5_windows.exe",
-  "windows_message": "Windows 版 1.0.5 已更新按钮配色，请先升级后再继续使用。"
+  "windows_download_url": "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/one-click-collage_1.0.6_windows.exe",
+  "windows_message": "Windows 版 1.0.6 已更新程序图标，请先升级后再继续使用。"
 }
