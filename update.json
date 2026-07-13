@@ -1,14 +1,14 @@
 {
   "enabled": true,
-  "latest_version": "1.0.6",
-  "min_supported_version": "1.0.6",
+  "latest_version": "1.0.7",
+  "min_supported_version": "1.0.7",
   "force_update": true,
   "prompt_optional_update": true,
-  "download_url": "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/uos-one-click-collage_1.0.6_all.deb",
-  "message": "1.0.6 已更新程序图标，请先升级后再继续使用。",
+  "download_url": "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/uos-one-click-collage_1.0.7_all.deb",
+  "message": "统信 UOS 版 1.0.7 已修复 python3-pil.imagetk 依赖缺失导致无法安装的问题，请升级后继续使用。",
   "windows_latest_version": "1.0.6",
   "windows_min_supported_version": "1.0.6",
   "windows_force_update": true,
   "windows_download_url": "https://raw.githubusercontent.com/6408396-star/one-click-collage-update/main/releases/one-click-collage_1.0.6_windows.exe",
-  "windows_message": "Windows 版 1.0.6 已更新程序图标，请先升级后再继续使用。"
+  "windows_message": "Windows 版当前版本为 1.0.6。"
 }
